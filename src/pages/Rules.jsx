@@ -10,8 +10,8 @@ export default function Rules() {
           <span className="eyebrow">The rulebook</span>
           <h1 className="h-xl">Rules</h1>
           <p className="lead">
-            Everything that governs a game of Dribball. The core rules are locked in below —
-            the full official list is on its way and will land right here.
+            The official rulebook — everything that governs a game of Dribball, from the
+            signature dribble handcuff to scoring, contact, and how the game is won.
           </p>
         </div>
       </section>

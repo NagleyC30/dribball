@@ -1,14 +1,13 @@
 /* ============================================================
-   DRIBBALL RULEBOOK DATA
+   DRIBBALL RULEBOOK DATA  —  Official Rules v2
    ------------------------------------------------------------
-   This is the single source of truth for the Rules page.
-   To expand the rulebook later, just add entries to the arrays
-   below — the UI renders whatever is here. Each section has an
-   id (for anchor links), a title, and a list of rules.
+   Single source of truth for the Rules page. The UI renders
+   whatever is here, so editing the game only means editing this
+   file: change a string, add a rule to a section's `rules`
+   array, or add a whole new section object.
 
-   NOTE: A full official rules list is coming. Sections marked
-   `pending: true` render a "more coming" note so the page stays
-   honest until the complete rules are added.
+   Each section: { id, title, kicker, rules[] }
+   `id` powers the anchor links / table of contents.
    ============================================================ */
 
 export const quickFacts = [
@@ -24,66 +23,166 @@ export const scoring = [
     name: 'Soccer Strike',
     color: 'mustard',
     how: 'Score by kicking the ball into the net.',
-    detail: 'A clean foot-strike into the goal is the premium way to score. Worth double — reward the kick.',
+    detail: 'The 2-point goal always comes from the feet. A clean foot-strike into the net is the premium way to score.',
   },
   {
     points: 1,
     name: 'Handball Throw',
     color: 'coral',
     how: 'Score by throwing the ball into the net with your hands.',
-    detail: 'Pick it up, throw it in. Faster and easier to pull off in traffic, but only worth a single point.',
+    detail: 'The 1-point goal always comes from the hands. Faster to pull off in traffic, but worth a single point.',
   },
 ]
 
 export const sections = [
   {
-    id: 'the-basics',
-    title: 'The Basics',
+    id: 'overview',
+    title: 'Overview & Objective',
     kicker: 'What the game is',
     rules: [
-      'Dribball is played between two teams of eight — seven field players and one goalie each.',
-      'There are two nets, one defended by each team at opposite ends of the play area.',
-      'The game is played with a custom ball: a bouncy foam ball (originally mustard yellow — hence the colors).',
-      'The objective is simple: put the ball in the other team’s net more than they put it in yours.',
+      'Dribball is a full-contact, 8-on-8 ball sport that fuses soccer footwork with basketball ball-handling.',
+      'Two teams attack opposite nets, moving a bouncy foam ball with both feet and hands.',
+      'Score by putting the ball into the other team’s net. Most points when the game ends wins.',
     ],
   },
   {
-    id: 'dribbling',
-    title: 'Dribbling',
-    kicker: 'The signature rule',
+    id: 'field',
+    title: 'The Field',
+    kicker: 'Where it’s played',
     rules: [
-      'You may soccer-dribble (control the ball with your feet) whenever you want.',
-      'You may basketball-dribble (bounce the ball with your hand) whenever you want.',
-      'You may NOT transition from a soccer dribble to a basketball dribble on your own — you can’t pick the ball up off your own feet to start bouncing it.',
-      'You can kick the ball to a teammate at any time.',
+      'Dribball is played on a rectangular field or court — turf, gym, or hard court all work.',
+      'Recommended size is about 40m × 20m, scaled to fit the space you have.',
+      'A net sits at each end line, with a goal crease marked around each one.',
+      'A center line and center circle mark midfield.',
+    ],
+  },
+  {
+    id: 'equipment',
+    title: 'The Ball & Equipment',
+    kicker: 'What you need',
+    rules: [
+      'One official Dribball: a bouncy foam ball, mustard-yellow.',
+      'Footwear to suit the surface. No equipment that helps you grip or hold the ball.',
+    ],
+  },
+  {
+    id: 'teams',
+    title: 'Teams & Players',
+    kicker: 'Who’s on the field',
+    rules: [
+      'Eight players per side: seven field players and one goalie.',
+      'Each team must field a clearly-marked goalie at all times.',
+      'A team may play with as few as five players.',
+    ],
+  },
+  {
+    id: 'game-length',
+    title: 'Game Length',
+    kicker: 'How long it runs',
+    rules: [
+      'A game is two 20-minute halves with a short halftime break.',
+      'The clock runs continuously; teams switch ends at halftime.',
+    ],
+  },
+  {
+    id: 'restarts',
+    title: 'Starting & Restarting Play',
+    kicker: 'Getting the ball moving',
+    rules: [
+      'The game begins with a center throw-off; opponents give three steps of space.',
+      'After a goal, the team that was scored on restarts from their own end (goalie ball).',
+      'The team that did not start the game takes the throw-off to begin the second half.',
+    ],
+  },
+  {
+    id: 'moving-the-ball',
+    title: 'Moving the Ball',
+    kicker: 'The heart of Dribball',
+    rules: [
+      'Feet (soccer dribble): unlimited — you may dribble with your feet and kick to a teammate anytime.',
+      'Hands (basketball dribble): you may bounce-dribble with your hand to move the ball, basketball-style.',
+      'The handcuff: you may NOT lift, flick, or scoop the ball into your own hands off your own feet.',
+      'Unlocking your hands: you may take the ball in hand only when it was last touched by someone or something other than your own feet — a teammate’s pass or kick, a deflection or rebound off an opponent, or a carom off a post, net, or wall.',
+      'Your own kick never unlocks your hands, even if it bounces — you touched it last, so the ball is still yours.',
+      'Hands → feet is always legal: drop the ball to your feet and soccer-dribble anytime. But once you do, you cannot take it back into your hands yourself.',
+      'Holding the ball: the instant you hold it — a catch, or picking up your hand-dribble — you must throw immediately, either a shot or a pass.',
+      'No traveling: no steps are allowed while holding the ball, except a single step to make the throw.',
+      'No double-dribble: once you pick up your hand-dribble and hold the ball, you cannot start a new hand-dribble.',
     ],
   },
   {
     id: 'scoring',
     title: 'Scoring',
-    kicker: 'How points work',
+    kicker: 'How you win points',
     rules: [
       'A soccer kick into the net is worth 2 points.',
       'A handball throw into the net is worth 1 point.',
-      'Most points when the game ends wins.',
+      'The 2-point goal always comes from the feet; the 1-point goal always comes from the hands.',
+      'You may score from anywhere on the field.',
+      'Own goals count for the other team.',
+      'Most points at the end of the game wins.',
+    ],
+  },
+  {
+    id: 'goalie',
+    title: 'The Goalie & the Crease',
+    kicker: 'Guarding the net',
+    rules: [
+      'Each team has one goalie, who defends the net from within the goal crease.',
+      'Inside the crease, the goalie may catch, hold, and throw the ball freely, and may not be contacted by opponents.',
+      'The goalie may leave the crease, but then plays under normal player rules and loses crease protection.',
+      'Field players may pass through the crease but may not camp inside the opponent’s crease.',
+      'The goalie restarts play with a throw or a kick.',
     ],
   },
   {
     id: 'contact',
-    title: 'Contact & Fouls',
-    kicker: 'Keep it physical, keep it fair',
+    title: 'Contact',
+    kicker: 'Full contact, clean contact',
     rules: [
-      'Dribball is full contact — bumping, shielding and battling for the ball are all part of the game.',
-      'Grabbing and holding are NOT allowed.',
+      'Dribball is full contact — bumping, shouldering, shielding, and battling for the ball are all legal.',
+      'Grabbing and holding are the only banned ways to contest possession.',
+      'Dangerous plays are prohibited: kicking an opponent, contact to the head or neck, and spear or diving tackles.',
     ],
   },
   {
-    id: 'more',
-    title: 'More Rules Coming',
-    kicker: 'Official rulebook in progress',
-    pending: true,
+    id: 'fouls',
+    title: 'Fouls & Penalties',
+    kicker: 'When rules are broken',
     rules: [
-      'The full official rules list is on the way and will be added here — including specifics on the goalie, restarts, out-of-bounds, and game length.',
+      'Every foul results in a free kick or throw for the fouled player, taken from the spot of the foul.',
+      'Because a foul can happen anywhere, that free play may be a pass or a direct attempt on goal — the fouled player’s choice.',
+      'Opponents must give three steps of space at a free kick or throw.',
+      'Egregious or dangerous fouls result in ejection.',
+    ],
+  },
+  {
+    id: 'out-of-bounds',
+    title: 'Out of Bounds',
+    kicker: 'When the ball leaves play',
+    rules: [
+      'Ball out over a sideline: the other team restarts with a throw or kick from where it left.',
+      'Out over an end line off a defender (no goal): the attacking team restarts from the corner.',
+      'Out over an end line off an attacker: goalie restart.',
+    ],
+  },
+  {
+    id: 'substitutions',
+    title: 'Substitutions',
+    kicker: 'Rotating players',
+    rules: [
+      'Substitutions are unlimited and on-the-fly; a substitute may enter only after their teammate is off.',
+      'Goalie changes happen at a stoppage, with the referee notified.',
+    ],
+  },
+  {
+    id: 'winning',
+    title: 'Winning & Overtime',
+    kicker: 'Deciding the game',
+    rules: [
+      'The team with the most points at full time wins.',
+      'If the game is tied, a golden-goal overtime decides it — the first score of any value wins.',
+      'If still tied, a free-shot shootout from a marked spot settles the result.',
     ],
   },
 ]
