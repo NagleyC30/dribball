@@ -7,7 +7,7 @@ const steps = [
   { title: 'Split into two teams of eight', text: 'Seven field players plus one goalie per side. Sixteen players total when you’re running full teams.' },
   { title: 'Grab the foam ball', text: 'Dribball uses a custom bouncy foam ball — light enough to throw, springy enough to bounce like a basketball.' },
   { title: 'Move it with feet or hands', text: 'Soccer-dribble with your feet or basketball-dribble with your hand — whenever you want. You can also kick it to a teammate at any time.' },
-  { title: 'Mind the handcuff', text: 'You can’t pick the ball up off your own feet to start a hand-dribble. To switch from feet to hands, the ball has to reach your hands another way.' },
+  { title: 'Mind the handcuff', text: 'To get the ball into your hands, catch it out of the air off a teammate’s kick — you can grab any airborne ball you weren’t the last to touch. You can never pick it up off the ground; a ball on the ground must be kicked.' },
   { title: 'Score two ways', text: 'Kick the ball into the net for 2 points, or throw it in with your hands for 1. Most points wins.' },
   { title: 'Play it physical', text: 'Dribball is full contact — bump and shield for the ball. No grabbing, no holding. Win possession, not a wrestling match.' },
 ]
@@ -75,8 +75,8 @@ export default function HowToPlay() {
               <h3>✅ You can</h3>
               <ul>
                 <li>Soccer-dribble with your feet whenever you want.</li>
-                <li>Basketball-dribble with your hand whenever you want.</li>
-                <li>Kick the ball to a teammate at any time.</li>
+                <li>Catch an airborne ball you weren’t the last to touch.</li>
+                <li>Kick the ball up to a teammate’s hands at any time.</li>
                 <li>Make full-contact plays — bump and shield for the ball.</li>
                 <li>Score by kicking it in (2) or throwing it in (1).</li>
               </ul>
@@ -84,9 +84,9 @@ export default function HowToPlay() {
             <Reveal className="dodont__col dodont__col--dont" delay={100}>
               <h3>🚫 You can’t</h3>
               <ul>
-                <li>Pick the ball off your own feet to start a hand-dribble.</li>
+                <li>Pick the ball up off the ground with your hands — ever.</li>
+                <li>Catch a ball you were the last to touch (no self-feeding).</li>
                 <li>Grab or hold opponents.</li>
-                <li>Expect a throw-in to be worth as much as a kick.</li>
               </ul>
             </Reveal>
           </div>
