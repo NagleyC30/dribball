@@ -472,6 +472,33 @@
 .nf { min-height: 60vh; display: grid; place-items: center; text-align: center; }
 .nf .h-xl { color: var(--mustard); }
 
+/* ---------------- Spec table (The Ball) ---------------- */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 420px;
+}
+.spec-table th,
+.spec-table td {
+  text-align: left;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  vertical-align: top;
+}
+.spec-table tr:last-child th,
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table th {
+  width: 34%;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--mustard);
+  white-space: nowrap;
+}
+.spec-table td { color: var(--text-dim); }
+
 /* ---------------- Reveal on scroll ---------------- */
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .reveal.is-in { opacity: 1; transform: none; }

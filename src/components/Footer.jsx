@@ -21,6 +21,7 @@ export default function Footer() {
           <Link to="/">Home</Link>
           <Link to="/how-to-play">How to Play</Link>
           <Link to="/rules">Rules</Link>
+          <Link to="/the-ball">The Ball</Link>
           <Link to="/about">About</Link>
         </nav>
 
